@@ -1,4 +1,4 @@
-async function fetchAndDisplayPosts() {
+async function getPosts() {
   try {
     const apiResponse = await fetch(
       "https://jsonplaceholder.typicode.com/posts"
@@ -23,6 +23,3 @@ async function fetchAndDisplayPosts() {
     console.error("Error fetching or displaying posts:", error);
   }
 }
-
-// Llamar a la función para ejecutar el código
-fetchAndDisplayPosts();

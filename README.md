@@ -4,7 +4,7 @@ Este proyecto es un simple script en JavaScript que obtiene datos de una API y l
 
 ## Descripción del Código
 
-El código consta de una función principal `fetchAndDisplayPosts` que realiza las siguientes tareas:
+El código consta de una función principal `getPosts` que realiza las siguientes tareas:
 
 1. **Fetch Data**: Utiliza `fetch` para obtener datos de la API `https://jsonplaceholder.typicode.com/posts`.
 2. **Convert to JSON**: Espera a que la respuesta se convierta a JSON.
@@ -13,9 +13,11 @@ El código consta de una función principal `fetchAndDisplayPosts` que realiza l
 ### Función Principal
 
 ```javascript
-async function fetchAndDisplayPosts() {
+async function getPosts() {
   try {
-    const apiResponse = await fetch("https://jsonplaceholder.typicode.com/posts"); // Espera a que la petición se cumpla
+    const apiResponse = await fetch(
+      "https://jsonplaceholder.typicode.com/posts"
+    ); // Espera a que la petición se cumpla
     const data = await apiResponse.json(); // Espera a que se convierta a JSON
 
     // Paso 2 => Mostrar el contenido en el html = MANIPULAR EL DOM = AGARRAR ETIQUETAS!
@@ -36,6 +38,4 @@ async function fetchAndDisplayPosts() {
     console.error("Error fetching or displaying posts:", error);
   }
 }
-
-// Llamar a la función para ejecutar el código
-fetchAndDisplayPosts();
+```
